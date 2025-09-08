@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0, total, missing;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    int arr[n-1];  // array has n-1 numbers
+    printf("Enter %d numbers (from 1 to %d, one is missing):\n", n-1, n);
+    for (int i = 0; i < n-1; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    total = n * (n + 1) / 2;   // sum of 1 to n
+    missing = total - sum;
+
+    printf("Missing number is: %d\n", missing);
+    return 0;
+}
